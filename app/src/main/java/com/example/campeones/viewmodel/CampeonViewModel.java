@@ -43,7 +43,7 @@ public class CampeonViewModel extends AndroidViewModel {
         return repository.getCampeon(id);
     }
 
-    public void insertPokemon(Campeon campeon, Posicion posicion) {
+    public void insertCampeon(Campeon campeon, Posicion posicion) {
         repository.insertCampeon(campeon, posicion);
     }
 
@@ -65,9 +65,9 @@ public class CampeonViewModel extends AndroidViewModel {
 
     public MutableLiveData<String> getKalosResult() {
         return repository.getKalosResult();
-    }
+    }*/
 
     public String getUrl(String pokemonName) {
         return repository.getUrl(pokemonName);
-    }*/
+    }
 }

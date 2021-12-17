@@ -195,7 +195,7 @@ public class CampeonRepository {
             Log.v("xyzyx", result);
         };
         new Thread(r).start();
-    }
+    }*/
 
     public String getUrl(String pokemonName) {
         String url = campeonMap.get(pokemonName.toLowerCase());
@@ -205,7 +205,7 @@ public class CampeonRepository {
         return url;
     }
 
-    private void populateHashMap(String string) {
+    /*private void populateHashMap(String string) {
         String name, url;
         try {
             JSONArray jsonArray = new JSONArray(string);
