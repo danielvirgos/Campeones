@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Campeones</string>
+    <string name="bienvenido">BIENVENIDO INVOCADOR</string>
+    <string name="bt_comienzo">iniciar aventura</string>
+    <string name="add_string">add</string>
+    <string name="dificultad">Dificultad</string>
+    <string name="skins">Numero skins</string>
+    <string name="default_posicion">«Seleccione posicion»</string>
+    <string name="nombre">Nombre</string>
+    <string name="url">URL</string>
+    <string name="cancel">cancel</string>
+    <string name="edit">Edit</string>
+</resources>
