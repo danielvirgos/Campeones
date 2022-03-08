@@ -29,11 +29,7 @@ public class CampeonAdapter extends RecyclerView.Adapter<CampeonViewHolder>{
     @Override
     public CampeonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_campeon, parent, false);
-        /*view.setOnClickListener(v -> {
-            Log.v("xyzyx", "onclick create ");
-            Pokemon p = (Pokemon) view.getTag();
-            Log.v("xyzyx", p.name);
-        });*/
+
         return new CampeonViewHolder(view);
     }
 

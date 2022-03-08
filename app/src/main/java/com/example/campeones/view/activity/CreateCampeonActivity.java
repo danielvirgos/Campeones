@@ -27,7 +27,7 @@ public class CreateCampeonActivity extends AppCompatActivity {
     private Spinner spPosicion;
     private ImageView ivImage;
     private Campeon campeon;
-    private CampeonViewModel cvm;
+    private CampeonViewModel campeonViewModel;
     private boolean firstTime = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,19 +37,19 @@ public class CreateCampeonActivity extends AppCompatActivity {
     }
 
     public void init() {
-        spPosicion = findViewById(R.id.spType);
-        etName = findViewById(R.id.etName);
-        etDificultad = findViewById(R.id.etDificultad);
-        etSkins = findViewById(R.id.etSkins);
-        etUrl = findViewById(R.id.etUrl);
-        ivImage = findViewById(R.id.ivImage);
-        etName.setOnFocusChangeListener((v, hasFocus) -> {
+        spPosicion = findViewById(R.id.spAddType);
+        etName = findViewById(R.id.etAddName);
+        etDificultad = findViewById(R.id.etAddDificultad);
+        etSkins = findViewById(R.id.etAddSkins);
+        etUrl = findViewById(R.id.etAddUrl);
+        ivImage = findViewById(R.id.ivAddImage);
+
+        etUrl.setOnFocusChangeListener((v, hasFocus) -> {
             String url;
             if(!hasFocus) {
-                if(!etName.getText().toString().isEmpty()) {
-                    url = cvm.getUrl(etName.getText().toString());
+                if(!etUrl.getText().toString().isEmpty()) {
+                    url = etUrl.getText().toString();
                     Glide.with(this).load(url).into(ivImage);
-                    etUrl.setText(url);
                 }
             }
         });
@@ -58,13 +58,13 @@ public class CreateCampeonActivity extends AppCompatActivity {
     }
 
     private void defineAddListener() {
-        Button btAdd = findViewById(R.id.btEdit);
+        Button btAdd = findViewById(R.id.btAdd);
         btAdd.setOnClickListener(v -> {
             Campeon campeon = getCampeon();
             if(campeon.isValid()) {
                 addCampeon(campeon);
             } else {
-                Toast.makeText(this, "12 no valid", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Alguno de los campos esta vacio", Toast.LENGTH_LONG).show();
             }
             //1º validar los datos
             //2º si está bien
@@ -97,11 +97,11 @@ public class CreateCampeonActivity extends AppCompatActivity {
     }
 
     private void addCampeon(Campeon campeon) {
-        cvm.insertCampeon(campeon);
+        campeonViewModel.insertCampeon(campeon);
     }
 
     private void getViewModel() {
-        cvm = new ViewModelProvider(this).get(CampeonViewModel.class);
+        campeonViewModel = new ViewModelProvider(this).get(CampeonViewModel.class);
 
         /*cvm.getKalos();
         cvm.getKalosResult().observe(this, s -> {
@@ -111,7 +111,7 @@ public class CreateCampeonActivity extends AppCompatActivity {
         /*pvm.getInsertResult().observe(this, aLong -> {
             Log.v("xyzyx", "res: " + aLong);
         });*/
-        cvm.getInsertResults().observe(this, list -> {
+        campeonViewModel.getInsertResults().observe(this, list -> {
             Log.v("xyzyx", "res: " + list);
             if(list.get(0) > 0) {
                 if(firstTime) {
@@ -125,8 +125,8 @@ public class CreateCampeonActivity extends AppCompatActivity {
             }
         });
 
-        PosicionViewModel tvm = new ViewModelProvider(this).get(PosicionViewModel.class);
-        tvm.getPosiciones().observe(this, types -> {
+        PosicionViewModel posicionViewModel = new ViewModelProvider(this).get(PosicionViewModel.class);
+        posicionViewModel.getPosiciones().observe(this, types -> {
             Posicion posicion = new Posicion();
             posicion.id = 0;
             posicion.name = getString(R.string.default_posicion);

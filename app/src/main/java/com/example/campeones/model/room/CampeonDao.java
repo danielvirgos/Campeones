@@ -17,6 +17,9 @@ import java.util.List;
 @Dao
 public interface CampeonDao {
 
+    @Query("select * from campeon where id = :id")
+    Campeon get(int id);
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     List<Long> insertCampeon(Campeon... campeones);
 

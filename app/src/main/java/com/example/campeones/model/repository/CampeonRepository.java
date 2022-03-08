@@ -34,6 +34,7 @@ public class CampeonRepository {
     private LiveData<Posicion> livePosicion;
     private MutableLiveData<Long> liveInsertResult;
     private MutableLiveData<List<Long>> liveInsertResults;
+    private Campeon campeon;
     //private MutableLiveData<String> liveGetKalosResult;
     private SharedPreferences preferences;
     //private CampeonList CampeonList;
@@ -70,6 +71,13 @@ public class CampeonRepository {
     /*public MutableLiveData<String> getKalosResult() {
         return liveGetKalosResult;
     }*/
+
+    public Campeon get(int id) {
+        if(campeon == null) {
+            campeon = dao.get(id);
+        }
+        return campeon;
+    }
 
     public MutableLiveData<List<Long>> getInsertResults() {
         return liveInsertResults;

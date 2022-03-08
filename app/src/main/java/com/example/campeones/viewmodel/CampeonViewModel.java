@@ -23,6 +23,10 @@ public class CampeonViewModel extends AndroidViewModel {
         repository = new CampeonRepository(application);
     }
 
+    public Campeon get (int id) {
+        return repository.get(id);
+    }
+
     public void insertCampeon(Campeon... campeones) {
         repository.insertCampeon(campeones);
     }

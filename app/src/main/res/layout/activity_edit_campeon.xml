@@ -7,92 +7,76 @@
     tools:context=".view.activity.EditCampeonActivity">
 
     <EditText
-        android:id="@+id/etUrl"
-        android:layout_width="0dp"
+        android:id="@+id/etEditUrl"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="@string/url"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etSkins"
+        app:layout_constraintTop_toBottomOf="@+id/etEditSkins"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/etName"
-        android:layout_width="0dp"
+        android:id="@+id/etEditName"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="@string/nombre"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/etDificultad"
+        app:layout_constraintBottom_toTopOf="@+id/etEditDificultad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spType"
+        app:layout_constraintTop_toBottomOf="@+id/spEditType"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/etDificultad"
-        android:layout_width="0dp"
+        android:id="@+id/etEditDificultad"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="@string/dificultad"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/etSkins"
+        app:layout_constraintBottom_toTopOf="@+id/etEditSkins"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etName"
+        app:layout_constraintTop_toBottomOf="@+id/etEditName"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/etSkins"
-        android:layout_width="0dp"
+        android:id="@+id/etEditSkins"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="@string/skins"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/etUrl"
+        app:layout_constraintBottom_toTopOf="@+id/etEditUrl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDificultad"
+        app:layout_constraintTop_toBottomOf="@+id/etEditDificultad"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Spinner
-        android:id="@+id/spType"
-        android:layout_width="0dp"
+        android:id="@+id/spEditType"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/etName"
+        app:layout_constraintBottom_toTopOf="@+id/etEditName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageView
-        android:id="@+id/ivImage"
+        android:id="@+id/ivEditImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/spType"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -102,21 +86,37 @@
         android:id="@+id/btEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="8dp"
         android:text="@string/edit"
         app:icon="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btEditCancel"
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
     <Button
-        android:id="@+id/btCancel"
+        android:id="@+id/btEditCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="8dp"
         android:text="@android:string/cancel"
         app:icon="@drawable/ic_baseline_cancel_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/btEdit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.86" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
 </androidx.constraintlayout.widget.ConstraintLayout>

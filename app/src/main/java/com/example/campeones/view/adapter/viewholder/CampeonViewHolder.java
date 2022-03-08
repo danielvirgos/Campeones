@@ -26,7 +26,7 @@ public class CampeonViewHolder extends RecyclerView.ViewHolder{
         tvDificultad = itemView.findViewById(R.id.tvDificultad);
         tvSkins = itemView.findViewById(R.id.tvSkins);
         tvUrl = itemView.findViewById(R.id.tvUrl);
-        ivPokemon = itemView.findViewById(R.id.ivPokemon);
+        ivPokemon = itemView.findViewById(R.id.imgCampeon);
         itemView.setOnClickListener(v -> {
             Log.v("xyzyx", "onclick" + campeon.name);
             Intent intent = new Intent(itemView.getContext(), EditCampeonActivity.class);

@@ -10,4 +10,6 @@
     <string name="url">URL</string>
     <string name="cancel">cancel</string>
     <string name="edit">Edit</string>
+    <string name="dificultad">Dificultad</string>
+    <string name="posicion">Posicion</string>
 </resources>
